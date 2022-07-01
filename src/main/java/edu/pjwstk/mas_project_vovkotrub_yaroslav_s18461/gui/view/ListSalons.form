@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="edu.pjwstk.mas_project_vovkotrub_yaroslav_s18461.gui.view.ListSalons">
+  <grid id="27dc6" binding="salonPanel" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="700" height="520"/>
+    </constraints>
+    <properties>
+      <maximumSize width="700" height="520"/>
+      <minimumSize width="700" height="520"/>
+      <preferredSize width="700" height="520"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <scrollpane id="ad7ec">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <maximumSize width="300" height="600"/>
+          <minimumSize width="300" height="600"/>
+          <preferredSize width="300" height="600"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="6299d" class="javax.swing.JList" binding="salonList" custom-create="true">
+            <constraints/>
+            <properties>
+              <font name="Century Gothic" size="18" style="1"/>
+              <layoutOrientation value="0"/>
+              <maximumSize width="300" height="600"/>
+              <minimumSize width="300" height="600"/>
+              <preferredSize width="300" height="600"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="beeec" class="javax.swing.JButton" binding="mainMenuButton">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="0" bottom="15" right="0" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-16728833"/>
+          <font name="Century Gothic" size="20" style="1"/>
+          <foreground color="-1"/>
+          <maximumSize width="196" height="60"/>
+          <minimumSize width="196" height="60"/>
+          <opaque value="true"/>
+          <preferredSize width="196" height="60"/>
+          <text value="Main menu"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
