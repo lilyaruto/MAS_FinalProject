@@ -8,6 +8,10 @@ import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Entity which represents abstract class PowerUnit,
+ * abstraction for Engine, Battery and HybridEngine
+ */
 @Entity
 @Data
 @AllArgsConstructor

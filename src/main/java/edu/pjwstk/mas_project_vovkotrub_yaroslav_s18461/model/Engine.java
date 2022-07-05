@@ -7,6 +7,9 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.Entity;
 import javax.validation.constraints.Min;
 
+/**
+ * Entity representing a "child" class for PowerUnit, construction of engines for vehicles
+ */
 @Entity
 @Data
 @AllArgsConstructor

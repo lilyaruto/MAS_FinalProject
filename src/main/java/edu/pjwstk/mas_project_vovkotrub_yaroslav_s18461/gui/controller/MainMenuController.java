@@ -9,13 +9,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * MainMenuController controls the content of the MainMenu
+ */
 @Component
 @RequiredArgsConstructor
 public class MainMenuController {
 
     private final MainMenu mainMenu;
     private final ListSalonsController listSalonsController;
+    private final AllVehiclesListController allVehiclesListController;
 
+    /**
+     * Sets the main frame visible
+     */
     public void showUI() {
         mainMenu.setVisible(true);
     }
@@ -27,6 +34,13 @@ public class MainMenuController {
                     listSalonsController.showUI(this);
                 }
         );
+
+        mainMenu.getAllVehicleButton().addActionListener(
+                e -> {
+                    allVehiclesListController.showUI(this);
+                }
+        );
+
         mainMenu.getExitButton().addActionListener(
                 e -> {
                     System.exit(0);
@@ -35,6 +49,10 @@ public class MainMenuController {
         SaveComponents();
     }
 
+    /**
+     * Shows the JPanel, which given as a parameter for content pane of the displayed frame
+     * @param panel
+     */
     public void showContent(JPanel panel) {
         mainMenu.getContentPane().removeAll();
         mainMenu.getContentPane().add(panel);

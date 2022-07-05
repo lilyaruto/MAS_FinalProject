@@ -9,6 +9,9 @@ import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Entity representing an address in some other construction
+ */
 @Entity
 @Data
 @AllArgsConstructor

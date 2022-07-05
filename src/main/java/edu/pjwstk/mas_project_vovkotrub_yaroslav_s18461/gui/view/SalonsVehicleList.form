@@ -13,7 +13,7 @@
     <children>
       <component id="8ab0" class="javax.swing.JButton" binding="mainMenuButton">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="196" height="60"/>
             <preferred-size width="196" height="60"/>
             <maximum-size width="196" height="60"/>
@@ -32,10 +32,11 @@
       </component>
       <scrollpane id="4efad">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="15" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+          <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
+          <background color="-3748915"/>
           <maximumSize width="300" height="600"/>
           <minimumSize width="300" height="600"/>
           <preferredSize width="300" height="600"/>
@@ -45,6 +46,7 @@
           <component id="a4c40" class="javax.swing.JList" binding="vehicleList" custom-create="true">
             <constraints/>
             <properties>
+              <background color="-3748915"/>
               <maximumSize width="300" height="600"/>
               <minimumSize width="300" height="600"/>
               <preferredSize width="300" height="600"/>
@@ -52,6 +54,128 @@
           </component>
         </children>
       </scrollpane>
+      <grid id="a9ec5" binding="salonInfo" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-3748915"/>
+          <maximumSize width="400" height="150"/>
+          <minimumSize width="400" height="150"/>
+          <preferredSize width="400" height="150"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="dca49" class="javax.swing.JTextPane" binding="salonInfoPane">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+              <gridbag weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-3748915"/>
+              <font name="Century Gothic" size="18" style="1"/>
+              <foreground color="-14013910"/>
+              <maximumSize width="400" height="105"/>
+              <minimumSize width="400" height="105"/>
+              <preferredSize width="400" height="105"/>
+            </properties>
+          </component>
+          <component id="14b57" class="javax.swing.JTextPane" binding="salonName">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-3748915"/>
+              <font name="Century Gothic" size="36" style="3"/>
+              <foreground color="-14013910"/>
+              <maximumSize width="400" height="45"/>
+              <minimumSize width="400" height="45"/>
+              <preferredSize width="400" height="45"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="7bbe9" binding="vehicleInfo" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-3748915"/>
+          <maximumSize width="400" height="300"/>
+          <minimumSize width="400" height="300"/>
+          <preferredSize width="400" height="300"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="a4675" class="javax.swing.JTextPane" binding="vehicleInfoPane">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+              <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-3748915"/>
+              <font name="Century Gothic" size="18" style="1"/>
+              <foreground color="-14013910"/>
+              <maximumSize width="225" height="300"/>
+              <minimumSize width="225" height="300"/>
+              <preferredSize width="225" height="300"/>
+            </properties>
+          </component>
+          <component id="43647" class="javax.swing.JLabel" binding="logo">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="5" left="5" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <maximumSize width="175" height="100"/>
+              <minimumSize width="175" height="100"/>
+              <preferredSize width="175" height="100"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="60df" class="javax.swing.JTextPane" binding="vehicleName">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-3748915"/>
+              <font name="Century Gothic" size="26" style="3"/>
+              <foreground color="-14013910"/>
+              <maximumSize width="300" height="100"/>
+              <minimumSize width="300" height="100"/>
+              <preferredSize width="300" height="100"/>
+            </properties>
+          </component>
+          <component id="3f07f" class="javax.swing.JTextPane" binding="servicePassportPane">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="2" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+              <gridbag top="0" left="0" bottom="25" right="10" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-3748915"/>
+              <font name="Century Gothic" size="18" style="3"/>
+              <foreground color="-15770193"/>
+              <maximumSize width="150" height="30"/>
+              <minimumSize width="150" height="30"/>
+              <preferredSize width="150" height="30"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
     </children>
   </grid>
 </form>

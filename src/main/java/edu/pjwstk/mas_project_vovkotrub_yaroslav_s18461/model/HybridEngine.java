@@ -8,6 +8,9 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.Entity;
 import javax.validation.constraints.Min;
 
+/**
+ * Entity representing a Hybrid Engine that is an Engine and a Battery at the same time
+ */
 @Entity
 @Data
 @AllArgsConstructor

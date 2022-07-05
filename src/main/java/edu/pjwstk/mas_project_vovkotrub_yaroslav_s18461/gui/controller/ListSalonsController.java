@@ -20,6 +20,11 @@ public class ListSalonsController {
 
     private final SalonService salonService;
 
+    /**
+     * showUI is a method for ListSalonsController to get the required construction and a
+     * reference to MainMenuController in order to invoke the display of this view
+     * @param mainMenuController reference to MainMenuController
+     */
     public void showUI(MainMenuController mainMenuController) {
         if (this.mainMenuController == null) {
             this.mainMenuController = mainMenuController;
@@ -41,7 +46,6 @@ public class ListSalonsController {
         listSalons.getSalonList().addListSelectionListener(
                 e -> {
                     salonsVehicleListController.showUI(listSalons.getSalonList().getSelectedValue(), mainMenuController);
-                    System.out.println(listSalons.getSalonList().getSelectedValue());
                 }
         );
 

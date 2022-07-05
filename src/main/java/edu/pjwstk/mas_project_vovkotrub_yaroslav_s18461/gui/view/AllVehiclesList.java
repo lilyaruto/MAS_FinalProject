@@ -1,6 +1,6 @@
 package edu.pjwstk.mas_project_vovkotrub_yaroslav_s18461.gui.view;
 
-import edu.pjwstk.mas_project_vovkotrub_yaroslav_s18461.model.Salon;
+import edu.pjwstk.mas_project_vovkotrub_yaroslav_s18461.model.Vehicle;
 import lombok.Data;
 import org.springframework.stereotype.Controller;
 
@@ -11,31 +11,33 @@ import java.awt.*;
 import java.util.Locale;
 
 /**
- * Class representing configuration for the salons' list panel
+ * Class representing configuration for all vehicles list panel
  */
 @Controller
 @Data
-public class ListSalons {
-    private JPanel salonPanel;
+public class AllVehiclesList {
     private JButton mainMenuButton;
-    private JList<Salon> salonList;
-    private DefaultListModel<Salon> salonListModel;
+    private JScrollPane allVehiclesPane;
+    private JList<Vehicle> allVehiclesList;
+    private JPanel panel;
+
+    private DefaultListModel<Vehicle> allVehicleListModel;
 
     private void createUIComponents() {
-        salonListModel = new DefaultListModel<>();
-        salonList = new JList<>(salonListModel);
-        salonList.setCellRenderer(new SalonListCellRender());
+        allVehicleListModel = new DefaultListModel<>();
+        allVehiclesList = new JList<>(allVehicleListModel);
+        allVehiclesList.setCellRenderer(new AllVehicleListCellRender());
     }
 
-    private class SalonListCellRender extends JLabel implements ListCellRenderer<Salon> {
+    private class AllVehicleListCellRender extends JLabel implements ListCellRenderer<Vehicle> {
 
-        public SalonListCellRender() {
+        public AllVehicleListCellRender() {
             setOpaque(true);
         }
 
         @Override
-        public Component getListCellRendererComponent(JList<? extends Salon> jList, Salon salon, int i, boolean b, boolean b1) {
-            setText(salon.getName());
+        public Component getListCellRendererComponent(JList<? extends Vehicle> jList, Vehicle vehicle, int i, boolean b, boolean b1) {
+            setText(vehicle.getManufacturer().getName() + " " + vehicle.getModelName());
             setFont(new Font("Century Gothic", Font.BOLD, 18));
             if (b) {
                 setBackground(jList.getSelectionBackground());
@@ -64,15 +66,15 @@ public class ListSalons {
      */
     private void $$$setupUI$$$() {
         createUIComponents();
-        salonPanel = new JPanel();
-        salonPanel.setLayout(new GridBagLayout());
-        salonPanel.setMaximumSize(new Dimension(700, 520));
-        salonPanel.setMinimumSize(new Dimension(700, 520));
-        salonPanel.setPreferredSize(new Dimension(700, 520));
-        final JScrollPane scrollPane1 = new JScrollPane();
-        scrollPane1.setMaximumSize(new Dimension(300, 600));
-        scrollPane1.setMinimumSize(new Dimension(300, 600));
-        scrollPane1.setPreferredSize(new Dimension(300, 600));
+        panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
+        panel.setMaximumSize(new Dimension(700, 520));
+        panel.setMinimumSize(new Dimension(700, 520));
+        panel.setPreferredSize(new Dimension(700, 520));
+        allVehiclesPane = new JScrollPane();
+        allVehiclesPane.setMaximumSize(new Dimension(400, 600));
+        allVehiclesPane.setMinimumSize(new Dimension(400, 600));
+        allVehiclesPane.setPreferredSize(new Dimension(400, 600));
         GridBagConstraints gbc;
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -80,14 +82,11 @@ public class ListSalons {
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         gbc.insets = new Insets(15, 0, 0, 0);
-        salonPanel.add(scrollPane1, gbc);
-        Font salonListFont = this.$$$getFont$$$("Century Gothic", Font.BOLD, 18, salonList.getFont());
-        if (salonListFont != null) salonList.setFont(salonListFont);
-        salonList.setLayoutOrientation(0);
-        salonList.setMaximumSize(new Dimension(300, 600));
-        salonList.setMinimumSize(new Dimension(300, 600));
-        salonList.setPreferredSize(new Dimension(300, 600));
-        scrollPane1.setViewportView(salonList);
+        panel.add(allVehiclesPane, gbc);
+        allVehiclesList.setMaximumSize(new Dimension(400, 600));
+        allVehiclesList.setMinimumSize(new Dimension(400, 600));
+        allVehiclesList.setPreferredSize(new Dimension(400, 600));
+        allVehiclesPane.setViewportView(allVehiclesList);
         mainMenuButton = new JButton();
         mainMenuButton.setBackground(new Color(-16728833));
         Font mainMenuButtonFont = this.$$$getFont$$$("Century Gothic", Font.BOLD, 20, mainMenuButton.getFont());
@@ -95,7 +94,6 @@ public class ListSalons {
         mainMenuButton.setForeground(new Color(-1));
         mainMenuButton.setMaximumSize(new Dimension(196, 60));
         mainMenuButton.setMinimumSize(new Dimension(196, 60));
-        mainMenuButton.setOpaque(true);
         mainMenuButton.setPreferredSize(new Dimension(196, 60));
         mainMenuButton.setText("Main menu");
         gbc = new GridBagConstraints();
@@ -103,7 +101,7 @@ public class ListSalons {
         gbc.gridy = 1;
         gbc.weightx = 1.0;
         gbc.insets = new Insets(15, 0, 15, 0);
-        salonPanel.add(mainMenuButton, gbc);
+        panel.add(mainMenuButton, gbc);
     }
 
     /**
@@ -132,7 +130,7 @@ public class ListSalons {
      * @noinspection ALL
      */
     public JComponent $$$getRootComponent$$$() {
-        return salonPanel;
+        return panel;
     }
 
 }

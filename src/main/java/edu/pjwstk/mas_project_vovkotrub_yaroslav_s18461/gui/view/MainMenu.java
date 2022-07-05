@@ -9,6 +9,9 @@ import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.util.Locale;
 
+/**
+ * Class representing configuration for the main frame of application
+ */
 @Data
 @Component
 public class MainMenu extends JFrame {
@@ -18,6 +21,9 @@ public class MainMenu extends JFrame {
     private JButton exitButton;
     private JLabel label;
 
+    /**
+     * Сonstructor
+     */
     public MainMenu() {
         setTitle("AutoInfo");
         setContentPane(panel);

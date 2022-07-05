@@ -9,6 +9,10 @@ import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Entity that has construction of vehicles' owner,
+ * and could be changed with Salon
+ */
 @Entity
 @Data
 @AllArgsConstructor

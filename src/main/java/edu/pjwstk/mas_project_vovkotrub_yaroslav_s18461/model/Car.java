@@ -11,6 +11,10 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Entity representing a "child" class for Vehicle,
+ * construction that gives an opportunity to create car, type of vehicle
+ */
 @Entity
 @Data
 @AllArgsConstructor

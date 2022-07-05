@@ -8,6 +8,10 @@ import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Entity that connected with Vehicle using composition,
+ * vehicle cannot exist without having manufacturer
+ */
 @Entity
 @Data
 @AllArgsConstructor

@@ -10,39 +10,29 @@ import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.util.Locale;
 
+/**
+ * Class representing configuration for the salons' vehicles list and their brief information panel
+ */
 @Data
 @Controller
 public class SalonsVehicleList {
     private JButton mainMenuButton;
     private JPanel vehiclePanel;
     private JList<Vehicle> vehicleList;
+    private JPanel salonInfo;
+    private JPanel vehicleInfo;
+    private JTextPane salonInfoPane;
+    private JTextPane vehicleInfoPane;
+    private JTextPane salonName;
+    private JLabel logo;
+    private JTextPane vehicleName;
+    private JTextPane servicePassportPane;
     private DefaultListModel<Vehicle> vehicleListModel;
 
     private void createUIComponents() {
         vehicleListModel = new DefaultListModel<>();
         vehicleList = new JList<>(vehicleListModel);
         vehicleList.setCellRenderer(new VehicleListCellRender());
-    }
-
-    private class VehicleListCellRender extends JLabel implements ListCellRenderer<Vehicle> {
-
-        public VehicleListCellRender() {
-            setOpaque(true);
-        }
-
-        @Override
-        public Component getListCellRendererComponent(JList<? extends Vehicle> jList, Vehicle vehicle, int i, boolean b, boolean b1) {
-            setText(vehicle.getManufacturer().getName() + " " + vehicle.getModelName());
-            setFont(new Font("Century Gothic", Font.BOLD, 18));
-            if (b) {
-                setBackground(jList.getSelectionBackground());
-                setForeground(jList.getSelectionForeground());
-            } else {
-                setBackground(jList.getBackground());
-                setForeground(jList.getForeground());
-            }
-            return this;
-        }
     }
 
     {
@@ -78,25 +68,132 @@ public class SalonsVehicleList {
         GridBagConstraints gbc;
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 1;
+        gbc.gridy = 2;
+        gbc.gridwidth = 3;
         gbc.weightx = 1.0;
         gbc.insets = new Insets(15, 0, 15, 0);
         vehiclePanel.add(mainMenuButton, gbc);
         final JScrollPane scrollPane1 = new JScrollPane();
+        scrollPane1.setBackground(new Color(-3748915));
         scrollPane1.setMaximumSize(new Dimension(300, 600));
         scrollPane1.setMinimumSize(new Dimension(300, 600));
         scrollPane1.setPreferredSize(new Dimension(300, 600));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
+        gbc.gridheight = 2;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
-        gbc.insets = new Insets(15, 0, 0, 0);
+        gbc.insets = new Insets(15, 15, 0, 0);
         vehiclePanel.add(scrollPane1, gbc);
+        vehicleList.setBackground(new Color(-3748915));
         vehicleList.setMaximumSize(new Dimension(300, 600));
         vehicleList.setMinimumSize(new Dimension(300, 600));
         vehicleList.setPreferredSize(new Dimension(300, 600));
         scrollPane1.setViewportView(vehicleList);
+        salonInfo = new JPanel();
+        salonInfo.setLayout(new GridBagLayout());
+        salonInfo.setBackground(new Color(-3748915));
+        salonInfo.setMaximumSize(new Dimension(400, 150));
+        salonInfo.setMinimumSize(new Dimension(400, 150));
+        salonInfo.setPreferredSize(new Dimension(400, 150));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(15, 15, 0, 15);
+        vehiclePanel.add(salonInfo, gbc);
+        salonInfoPane = new JTextPane();
+        salonInfoPane.setBackground(new Color(-3748915));
+        Font salonInfoPaneFont = this.$$$getFont$$$("Century Gothic", Font.BOLD, 18, salonInfoPane.getFont());
+        if (salonInfoPaneFont != null) salonInfoPane.setFont(salonInfoPaneFont);
+        salonInfoPane.setForeground(new Color(-14013910));
+        salonInfoPane.setMaximumSize(new Dimension(400, 105));
+        salonInfoPane.setMinimumSize(new Dimension(400, 105));
+        salonInfoPane.setPreferredSize(new Dimension(400, 105));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        salonInfo.add(salonInfoPane, gbc);
+        salonName = new JTextPane();
+        salonName.setBackground(new Color(-3748915));
+        Font salonNameFont = this.$$$getFont$$$("Century Gothic", Font.BOLD | Font.ITALIC, 36, salonName.getFont());
+        if (salonNameFont != null) salonName.setFont(salonNameFont);
+        salonName.setForeground(new Color(-14013910));
+        salonName.setMaximumSize(new Dimension(400, 45));
+        salonName.setMinimumSize(new Dimension(400, 45));
+        salonName.setPreferredSize(new Dimension(400, 45));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        salonInfo.add(salonName, gbc);
+        vehicleInfo = new JPanel();
+        vehicleInfo.setLayout(new GridBagLayout());
+        vehicleInfo.setBackground(new Color(-3748915));
+        vehicleInfo.setMaximumSize(new Dimension(400, 300));
+        vehicleInfo.setMinimumSize(new Dimension(400, 300));
+        vehicleInfo.setPreferredSize(new Dimension(400, 300));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.insets = new Insets(15, 15, 0, 15);
+        vehiclePanel.add(vehicleInfo, gbc);
+        vehicleInfoPane = new JTextPane();
+        vehicleInfoPane.setBackground(new Color(-3748915));
+        Font vehicleInfoPaneFont = this.$$$getFont$$$("Century Gothic", Font.BOLD, 18, vehicleInfoPane.getFont());
+        if (vehicleInfoPaneFont != null) vehicleInfoPane.setFont(vehicleInfoPaneFont);
+        vehicleInfoPane.setForeground(new Color(-14013910));
+        vehicleInfoPane.setMaximumSize(new Dimension(225, 300));
+        vehicleInfoPane.setMinimumSize(new Dimension(225, 300));
+        vehicleInfoPane.setPreferredSize(new Dimension(225, 300));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(5, 0, 0, 0);
+        vehicleInfo.add(vehicleInfoPane, gbc);
+        logo = new JLabel();
+        logo.setMaximumSize(new Dimension(175, 100));
+        logo.setMinimumSize(new Dimension(175, 100));
+        logo.setPreferredSize(new Dimension(175, 100));
+        logo.setText("");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(5, 5, 0, 0);
+        vehicleInfo.add(logo, gbc);
+        vehicleName = new JTextPane();
+        vehicleName.setBackground(new Color(-3748915));
+        Font vehicleNameFont = this.$$$getFont$$$("Century Gothic", Font.BOLD | Font.ITALIC, 26, vehicleName.getFont());
+        if (vehicleNameFont != null) vehicleName.setFont(vehicleNameFont);
+        vehicleName.setForeground(new Color(-14013910));
+        vehicleName.setMaximumSize(new Dimension(300, 100));
+        vehicleName.setMinimumSize(new Dimension(300, 100));
+        vehicleName.setPreferredSize(new Dimension(300, 100));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        vehicleInfo.add(vehicleName, gbc);
+        servicePassportPane = new JTextPane();
+        servicePassportPane.setBackground(new Color(-3748915));
+        Font servicePassportPaneFont = this.$$$getFont$$$("Century Gothic", Font.BOLD | Font.ITALIC, 18, servicePassportPane.getFont());
+        if (servicePassportPaneFont != null) servicePassportPane.setFont(servicePassportPaneFont);
+        servicePassportPane.setForeground(new Color(-15770193));
+        servicePassportPane.setMaximumSize(new Dimension(150, 30));
+        servicePassportPane.setMinimumSize(new Dimension(150, 30));
+        servicePassportPane.setPreferredSize(new Dimension(150, 30));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 2;
+        gbc.gridy = 1;
+        gbc.anchor = GridBagConstraints.SOUTH;
+        gbc.insets = new Insets(0, 0, 25, 10);
+        vehicleInfo.add(servicePassportPane, gbc);
     }
 
     /**
@@ -128,4 +225,24 @@ public class SalonsVehicleList {
         return vehiclePanel;
     }
 
+    private class VehicleListCellRender extends JLabel implements ListCellRenderer<Vehicle> {
+
+        public VehicleListCellRender() {
+            setOpaque(true);
+        }
+
+        @Override
+        public Component getListCellRendererComponent(JList<? extends Vehicle> jList, Vehicle vehicle, int i, boolean b, boolean b1) {
+            setText(vehicle.getManufacturer().getName() + " " + vehicle.getModelName());
+            setFont(new Font("Century Gothic", Font.BOLD, 18));
+            if (b) {
+                setBackground(jList.getSelectionBackground());
+                setForeground(jList.getSelectionForeground());
+            } else {
+                setBackground(jList.getBackground());
+                setForeground(jList.getForeground());
+            }
+            return this;
+        }
+    }
 }

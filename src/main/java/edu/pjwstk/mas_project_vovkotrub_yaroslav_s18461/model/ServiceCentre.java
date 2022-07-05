@@ -10,6 +10,10 @@ import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Entity that represents service centre for vehicles,
+ * and making service passport for them
+ */
 @Entity
 @Data
 @AllArgsConstructor

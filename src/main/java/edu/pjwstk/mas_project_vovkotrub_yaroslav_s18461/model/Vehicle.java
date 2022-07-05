@@ -12,6 +12,10 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Main entity of the whole system, which is representing vehicle,
+ * and its' associations with all other entities
+ */
 @Entity
 @Data
 @NoArgsConstructor
@@ -109,6 +113,7 @@ public abstract class Vehicle {
         salon.addVehicle(this);
     }
 
+    //Derived attribute
     private String getOldnessRank() {
         float coeficient = ((float)kmAge*7/300000) +
                 ((float) (LocalDate.now().getYear() - productionYear)*3/50);

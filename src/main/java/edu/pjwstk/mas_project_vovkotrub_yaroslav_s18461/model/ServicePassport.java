@@ -6,6 +6,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+/**
+ * Entity that represents association with attribute between vehicle and service centre
+ */
 @Entity
 @Data
 @AllArgsConstructor
@@ -25,7 +28,8 @@ public class ServicePassport {
     @NotNull(message = "Service Passport service type cannot be empty value!")
     @Enumerated(EnumType.STRING)
     private ServiceType serviceType;
-    
+
+    //Derived attribute
     public LocalDate endDate() {
         return LocalDate.of(date.getYear() + 2,
                 date.getMonth(),

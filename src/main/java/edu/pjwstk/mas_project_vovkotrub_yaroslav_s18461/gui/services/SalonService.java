@@ -8,11 +8,18 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Service to fetch data from construction repository
+ */
 @Service
 @RequiredArgsConstructor
 public class SalonService {
     private final SalonRepository salonRepository;
 
+    /**
+     * Using SalonRepository to get a list of all salons
+     * @return list of all salons
+     */
     public List<Salon> getAllSalons() {
         Iterable<Salon> all = salonRepository.findAll();
         List<Salon> salonsList = new ArrayList<>();

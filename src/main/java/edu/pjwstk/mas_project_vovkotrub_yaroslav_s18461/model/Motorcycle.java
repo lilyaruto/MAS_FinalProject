@@ -6,6 +6,10 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 
+/**
+ * Entity representing a "child" class for Vehicle,
+ * construction that gives an opportunity to create motorcycle, type of vehicle
+ */
 @Entity
 @Data
 @AllArgsConstructor
